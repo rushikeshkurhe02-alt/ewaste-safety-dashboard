@@ -1,0 +1,26 @@
+export const T = {
+  en: {
+    app: 'E-Waste Safety Monitor', tag: 'Live smoke & gas warning',
+    nav: { live: 'Live', alerts: 'Alerts', history: 'History', about: 'About' },
+    lv: ['SAFE', 'CAUTION', 'DANGER'],
+    msg: ['Air is fine. You can work normally.', 'Smoke is rising. Wear your mask and move to fresh air.', 'Dangerous smoke! Stop work and move away now.'],
+    m: { pm25: 'Smoke dust (PM2.5)', pm10: 'Dust (PM10)', gas: 'Harmful gas', temp: 'Temperature', hum: 'Humidity', battery: 'Battery' },
+    upd: 'Updated', demo: 'Demo mode', live: 'Live', sim: 'Simulate smoke', stop: 'Stop simulation', on: 'Sound on', off: 'Sound off',
+    alerts: 'Alert history', none: 'No alerts yet. You will see them here.', reached: 'PM2.5 reached', hist: 'Last 24 hours',
+    peak: 'Highest', avg: 'Average', dng: 'Time in danger', warnL: 'Caution level', dngL: 'Danger level',
+    how: 'How it works', steps: ['Worker wears the device on the belt or chest.', 'It checks smoke, dust and gas in the air.', 'If air is unsafe, it beeps and vibrates, and this page shows an alert.'],
+    lim: 'Alert levels', note: 'This is a smoke and gas warning indicator. It does not measure lead or cadmium directly. Always wear a mask.',
+  },
+  hi: {
+    app: 'ई-वेस्ट सेफ्टी मॉनिटर', tag: 'धुएँ और गैस की लाइव चेतावनी',
+    nav: { live: 'लाइव', alerts: 'अलर्ट', history: 'इतिहास', about: 'जानकारी' },
+    lv: ['सुरक्षित', 'सावधान', 'खतरा'],
+    msg: ['हवा ठीक है। आप सामान्य रूप से काम कर सकते हैं।', 'धुआँ बढ़ रहा है। मास्क पहनें और खुली हवा में जाएँ।', 'खतरनाक धुआँ! काम रोकें और तुरंत दूर हट जाएँ।'],
+    m: { pm25: 'धुआँ-धूल (PM2.5)', pm10: 'धूल (PM10)', gas: 'हानिकारक गैस', temp: 'तापमान', hum: 'नमी', battery: 'बैटरी' },
+    upd: 'अपडेट', demo: 'डेमो मोड', live: 'लाइव', sim: 'धुआँ सिमुलेट करें', stop: 'सिमुलेशन रोकें', on: 'आवाज़ चालू', off: 'आवाज़ बंद',
+    alerts: 'अलर्ट इतिहास', none: 'अभी कोई अलर्ट नहीं। अलर्ट यहाँ दिखेंगे।', reached: 'PM2.5 पहुँचा', hist: 'पिछले 24 घंटे',
+    peak: 'सबसे ज़्यादा', avg: 'औसत', dng: 'खतरे में समय', warnL: 'सावधानी स्तर', dngL: 'खतरा स्तर',
+    how: 'यह कैसे काम करता है', steps: ['मज़दूर डिवाइस को बेल्ट या सीने पर पहनता है।', 'यह हवा में धुआँ, धूल और गैस जाँचता है।', 'हवा खराब होने पर बीप और कंपन होता है, और यह पेज अलर्ट दिखाता है।'],
+    lim: 'अलर्ट स्तर', note: 'यह धुएँ और गैस की चेतावनी देने वाला संकेतक है। यह सीसा या कैडमियम को सीधे नहीं मापता। हमेशा मास्क पहनें।',
+  },
+};
