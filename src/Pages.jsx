@@ -1,4 +1,5 @@
 import { LIMITS, lvl, overall } from './data.js';
+import HistoryPanel from './HistoryPanel.jsx';
 const CLS = ['safe', 'warn', 'danger'];
 const ICON = ['✅', '⚠️', '🚨'];
 const fmt = (t) => new Date(t).toLocaleString([], { day: '2-digit', month: 'short', hour: '2-digit', minute: '2-digit' });
@@ -41,6 +42,7 @@ export function Live({ r, t, boost, setBoost, demo, muted, setMuted }) {
         {demo && <button className={boost ? 'btn red' : 'btn'} onClick={() => setBoost(!boost)}>🔥 {boost ? t.stop : t.sim}</button>}
         <button className="btn ghost" onClick={() => setMuted(!muted)}>{muted ? '🔇 ' + t.off : '🔊 ' + t.on}</button>
       </div>
+      <HistoryPanel />
     </>
   );
 }

@@ -59,3 +59,12 @@ table{width:100%;border-collapse:collapse}td{padding:10px 6px;border-bottom:1px 
 }
 @media(max-width:420px){.brand small{display:none}.signal i{width:28px;height:28px}.hero{padding:16px;gap:14px}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+.hp{margin-top:18px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px;align-items:center}
+.chip{border:1.5px solid var(--line);background:#fff;border-radius:99px;padding:8px 14px;font:inherit;font-weight:600;cursor:pointer;min-height:40px;color:var(--ink)}
+.chip.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.hp input[type=date]{font:inherit;padding:8px 10px;border:1.5px solid var(--line);border-radius:10px;min-height:40px}
+.tip{min-height:26px;font-weight:600;margin:4px 0 8px}
+.hp th{font-size:13px;color:var(--muted);padding:6px}
+.hp tr.click{cursor:pointer}.hp tr.click:hover{background:#f4f6f8}
+.hp .grid{margin-top:12px}

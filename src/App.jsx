@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import { START, next, overall, seedHistory, seedAlerts } from './data.js';
 import { T } from './i18n.js';
-import { Live, Alerts, History, About } from './Pages.jsx';
+import { Live, Alerts, About } from './Pages.jsx';
+import HistoryPanel from './HistoryPanel.jsx';
 
 const env = import.meta.env;
 const LIVE = !!env.VITE_FIREBASE_DATABASE_URL;
@@ -90,7 +91,7 @@ export default function App() {
       </header>
       <main>
         {page === 'alerts' ? <Alerts alerts={alerts} t={t} />
-          : page === 'history' ? <History hist={hist} t={t} />
+          : page === 'history' ? <HistoryPanel />
           : page === 'about' ? <About t={t} />
           : <Live r={r} t={t} boost={boost} setBoost={setBoost} demo={!LIVE} muted={muted} setMuted={setMuted} />}
       </main>
