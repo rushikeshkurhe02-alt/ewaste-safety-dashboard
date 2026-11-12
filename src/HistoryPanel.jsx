@@ -40,6 +40,7 @@ export default function HistoryPanel() {
   const [busy, setBusy] = useState(false);
   const [err, setErr] = useState('');
   const [hover, setHover] = useState(null);
+  const [sample, setSample] = useState(false);
 
   const [from, to] = useMemo(() => {
     if (range === 'day') { const s = startOf(day); return [s, s + DAY - 1]; }
@@ -50,12 +51,12 @@ export default function HistoryPanel() {
   useEffect(() => {
     let ok = true;
     setBusy(true); setErr('');
-    (LIVE ? fetchReadings(from, to) : Promise.resolve(demo(from, to)))
+    (LIVE && !sample ? fetchReadings(from, to) : Promise.resolve(demo(from, to)))
       .then((r) => ok && setRows(r))
       .catch(() => ok && setErr('Could not load data. Check Firebase rules.'))
       .finally(() => ok && setBusy(false));
     return () => { ok = false; };
-  }, [from, to]);
+  }, [from, to, sample]);
 
   useEffect(() => setHover(null), [rows, metric]);
 
@@ -99,6 +100,7 @@ export default function HistoryPanel() {
           <button key={k} className={'chip' + (range === k ? ' on' : '')} onClick={() => setRange(k)}>{l}</button>
         ))}
         {range === 'day' && <input type="date" value={day} max={dkey(Date.now())} onChange={(e) => e.target.value && setDay(e.target.value)} />}
+        <button className={'chip' + (sample ? ' on' : '')} onClick={() => setSample(!sample)}>🧪 Sample data</button>
       </div>
       <div className="chips">
         {Object.entries(M).map(([k, [l]]) => (
