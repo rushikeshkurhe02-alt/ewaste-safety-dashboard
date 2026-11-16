@@ -10,7 +10,6 @@ const fmt = (t) => new Date(t).toLocaleString([], { weekday: 'short', day: '2-di
 const r1 = (v) => Math.round(v * 10) / 10;
 const avg = (a) => a.reduce((s, x) => s + x, 0) / a.length;
 
-// Fake history for Demo mode
 function demo(from, to) {
   const a = [];
   for (let t = from; t <= to; t += 1800000) {
