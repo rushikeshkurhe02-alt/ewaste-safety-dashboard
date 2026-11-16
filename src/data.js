@@ -1,5 +1,5 @@
 
-export const LIMITS = { pm25: [5, 30], pm10: [16, 48], gas: [25, 60] };
+export const LIMITS = { pm25: [10, 30], pm10: [16, 48], gas: [25, 60] };
 export const lvl = (k, v) => (v >= LIMITS[k][1] ? 2 : v >= LIMITS[k][0] ? 1 : 0);
 export const overall = (r) =>
   r.lvl != null ? r.lvl : Math.max(lvl('pm25', r.pm25), lvl('pm10', r.pm10), lvl('gas', r.gas));
