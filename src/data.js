@@ -1,8 +1,6 @@
-// [warning, danger] limits. Change after real testing.
-// Must match thresholds in the ESP32 code (values are CHANGE above clean-air baseline)
+
 export const LIMITS = { pm25: [25, 70], pm10: [40, 112], gas: [60, 150] };
 export const lvl = (k, v) => (v >= LIMITS[k][1] ? 2 : v >= LIMITS[k][0] ? 1 : 0);
-// Live mode: trust the level decided by the ESP32 (r.lvl). Demo mode: compute from values.
 export const overall = (r) =>
   r.lvl != null ? r.lvl : Math.max(lvl('pm25', r.pm25), lvl('pm10', r.pm10), lvl('gas', r.gas));
 const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
@@ -10,7 +8,6 @@ const rnd = (a, b) => a + Math.random() * (b - a);
 
 export const START = { pm25: 38, pm10: 62, gas: 260, temp: 31.2, hum: 52, battery: 78, t: Date.now() };
 
-// Fake "sensor" tick used in Demo mode
 export const next = (p, boost) => {
   const pm25 = Math.round(clamp(p.pm25 + rnd(-14, 14) + (boost ? 45 : p.pm25 > 70 ? -8 : 0), 12, 330));
   return {
