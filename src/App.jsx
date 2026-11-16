@@ -40,7 +40,6 @@ export default function App() {
 
   useEffect(() => { document.documentElement.lang = lang; localStorage.setItem('lang', lang); }, [lang]);
 
-  // Data source: Firebase (if env set) else Demo simulator
   useEffect(() => {
     if (LIVE) {
       let offs = [];
